@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Опросник: Насколько я ленюсь в учёбе?</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/mCdFGpDQ/favicon.png">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .container {
+    background: #fff;
+    padding: 30px 25px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    max-width: 650px;
+    width: 100%;
+  }
+  h1 {
+    font-weight: 500;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: #202124;
+    text-align: center;
+  }
+  .question-block {
+    background: #fafafa;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #1a73e8;
+  }
+  .question-block p {
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #202124;
+  }
+  .options label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .options input[type="radio"] {
+    margin-right: 10px;
+  }
+  .options label:hover {
+    background: #e8f0fe;
+  }
+  button {
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 14px 22px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;
+    margin: 20px auto 0 auto;
+  }
+  button:hover {
+    background: #1558b0;
+  }
+  .result {
+    margin-top: 25px;
+    font-weight: 500;
+    font-size: 1.3em;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 20px;
+    }
+    h1 { font-size: 1.5em; }
+    button { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Опросник «Насколько я ленюсь в учёбе?»</h1>
+
+<form id="quizForm">
+  <!-- 15 вопросов -->
+  <div class="question-block">
+    <p>1. Я откладываю выполнение домашнего задания или подготовки к занятиям</p>
+    <div class="options">
+      <label><input type="radio" name="q1" value="0" required> Никогда</label>
+      <label><input type="radio" name="q1" value="1"> Редко</label>
+      <label><input type="radio" name="q1" value="2"> Иногда</label>
+      <label><input type="radio" name="q1" value="3"> Часто</label>
+      <label><input type="radio" name="q1" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>2. Начинаю делать задания в последний момент</p>
+    <div class="options">
+      <label><input type="radio" name="q2" value="0" required> Никогда</label>
+      <label><input type="radio" name="q2" value="1"> Редко</label>
+      <label><input type="radio" name="q2" value="2"> Иногда</label>
+      <label><input type="radio" name="q2" value="3"> Часто</label>
+      <label><input type="radio" name="q2" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>3. Часто отвлекаюсь на телефон или соцсети во время учёбы</p>
+    <div class="options">
+      <label><input type="radio" name="q3" value="0" required> Никогда</label>
+      <label><input type="radio" name="q3" value="1"> Редко</label>
+      <label><input type="radio" name="q3" value="2"> Иногда</label>
+      <label><input type="radio" name="q3" value="3"> Часто</label>
+      <label><input type="radio" name="q3" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>4. Мне сложно заставить себя сесть за уроки/подготовку</p>
+    <div class="options">
+      <label><input type="radio" name="q4" value="0" required> Никогда</label>
+      <label><input type="radio" name="q4" value="1"> Редко</label>
+      <label><input type="radio" name="q4" value="2"> Иногда</label>
+      <label><input type="radio" name="q4" value="3"> Часто</label>
+      <label><input type="radio" name="q4" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>5. Я не делаю задания, если они кажутся сложными или скучными</p>
+    <div class="options">
+      <label><input type="radio" name="q5" value="0" required> Никогда</label>
+      <label><input type="radio" name="q5" value="1"> Редко</label>
+      <label><input type="radio" name="q5" value="2"> Иногда</label>
+      <label><input type="radio" name="q5" value="3"> Часто</label>
+      <label><input type="radio" name="q5" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>6. Предпочитаю отдых (игры, видео) вместо учёбы</p>
+    <div class="options">
+      <label><input type="radio" name="q6" value="0" required> Никогда</label>
+      <label><input type="radio" name="q6" value="1"> Редко</label>
+      <label><input type="radio" name="q6" value="2"> Иногда</label>
+      <label><input type="radio" name="q6" value="3"> Часто</label>
+      <label><input type="radio" name="q6" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>7. Я часто не довожу задания до конца</p>
+    <div class="options">
+      <label><input type="radio" name="q7" value="0" required> Никогда</label>
+      <label><input type="radio" name="q7" value="1"> Редко</label>
+      <label><input type="radio" name="q7" value="2"> Иногда</label>
+      <label><input type="radio" name="q7" value="3"> Часто</label>
+      <label><input type="radio" name="q7" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>8. Жду «настроения», чтобы начать учиться</p>
+    <div class="options">
+      <label><input type="radio" name="q8" value="0" required> Никогда</label>
+      <label><input type="radio" name="q8" value="1"> Редко</label>
+      <label><input type="radio" name="q8" value="2"> Иногда</label>
+      <label><input type="radio" name="q8" value="3"> Часто</label>
+      <label><input type="radio" name="q8" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>9. Могу пропустить занятия или не подготовиться без серьёзной причины</p>
+    <div class="options">
+      <label><input type="radio" name="q9" value="0" required> Никогда</label>
+      <label><input type="radio" name="q9" value="1"> Редко</label>
+      <label><input type="radio" name="q9" value="2"> Иногда</label>
+      <label><input type="radio" name="q9" value="3"> Часто</label>
+      <label><input type="radio" name="q9" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>10. Бывает, что списываю, вместо того чтобы разобраться самому</p>
+    <div class="options">
+      <label><input type="radio" name="q10" value="0" required> Никогда</label>
+      <label><input type="radio" name="q10" value="1"> Редко</label>
+      <label><input type="radio" name="q10" value="2"> Иногда</label>
+      <label><input type="radio" name="q10" value="3"> Часто</label>
+      <label><input type="radio" name="q10" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>11. Мне трудно соблюдать режим (вовремя учиться, спать, отдыхать)</p>
+    <div class="options">
+      <label><input type="radio" name="q11" value="0" required> Никогда</label>
+      <label><input type="radio" name="q11" value="1"> Редко</label>
+      <label><input type="radio" name="q11" value="2"> Иногда</label>
+      <label><input type="radio" name="q11" value="3"> Часто</label>
+      <label><input type="radio" name="q11" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>12. Я откладываю подготовку к контрольным/экзаменам</p>
+    <div class="options">
+      <label><input type="radio" name="q12" value="0" required> Никогда</label>
+      <label><input type="radio" name="q12" value="1"> Редко</label>
+      <label><input type="radio" name="q12" value="2"> Иногда</label>
+      <label><input type="radio" name="q12" value="3"> Часто</label>
+      <label><input type="radio" name="q12" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>13. Часто думаю «успею потом»</p>
+    <div class="options">
+      <label><input type="radio" name="q13" value="0" required> Никогда</label>
+      <label><input type="radio" name="q13" value="1"> Редко</label>
+      <label><input type="radio" name="q13" value="2"> Иногда</label>
+      <label><input type="radio" name="q13" value="3"> Часто</label>
+      <label><input type="radio" name="q13" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>14. Чувствую усталость уже при мысли об учёбе</p>
+    <div class="options">
+      <label><input type="radio" name="q14" value="0" required> Никогда</label>
+      <label><input type="radio" name="q14" value="1"> Редко</label>
+      <label><input type="radio" name="q14" value="2"> Иногда</label>
+      <label><input type="radio" name="q14" value="3"> Часто</label>
+      <label><input type="radio" name="q14" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>15. Мне не хватает мотивации учиться</p>
+    <div class="options">
+      <label><input type="radio" name="q15" value="0" required> Никогда</label>
+      <label><input type="radio" name="q15" value="1"> Редко</label>
+      <label><input type="radio" name="q15" value="2"> Иногда</label>
+      <label><input type="radio" name="q15" value="3"> Часто</label>
+      <label><input type="radio" name="q15" value="4"> Почти всегда</label>
+    </div>
+  </div>
+
+  <button type="submit">Показать результат</button>
+</form>
+
+<div id="result" class="result"></div>
+
+<script>
+document.getElementById('quizForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  let total = 0;
+  for (let i = 1; i <= 15; i++) {
+    let radios = document.getElementsByName('q' + i);
+    let answered = false;
+    for (let radio of radios) {
+      if (radio.checked) {
+        total += parseInt(radio.value);
+        answered = true;
+      }
+    }
+    if (!answered) {
+      alert(`Пожалуйста, ответьте на вопрос ${i}`);
+      return;
+    }
+  }
+
+  let resultDiv = document.getElementById('result');
+  let message = '';
+  let color = '';
+
+  if (total <= 15) { message = '👍 Отличная дисциплина'; color = '#34a853'; }
+  else if (total <= 30) { message = '🙂 Нормально, но есть прокрастинация'; color = '#fbbc05'; }
+  else if (total <= 45) { message = '⚠️ Учёба часто откладывается'; color = '#f37321'; }
+  else { message = '🚨 Сильная проблема с ленью/мотивацией'; color = '#ea4335'; }
+
+  resultDiv.innerText = `Ваш балл: ${total}. ${message}`;
+  resultDiv.style.backgroundColor = color;
+  resultDiv.style.color = '#fff';
+});
+</script>
+
+</div>
+</body>
+</html>
